@@ -23,7 +23,7 @@ pipeline {
             steps {
                 withCredentials([
                     [$class: 'AmazonWebServicesCredentialsBinding',
-                     credentialsId: 'aws-credentials']
+                     credentialsId: 'jenkins-poc']
                 ]) {
                     sh '''
                     aws ecr get-login-password --region $AWS_REGION | \
@@ -51,7 +51,7 @@ pipeline {
             steps {
                 withCredentials([
                     [$class: 'AmazonWebServicesCredentialsBinding',
-                     credentialsId: 'aws-credentials']
+                     credentialsId: 'jenkins-poc']
                 ]) {
                     sh '''
                     aws ecs register-task-definition --cli-input-json file://task-def-final.json
