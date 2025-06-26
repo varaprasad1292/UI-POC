@@ -1,0 +1,21 @@
+{
+  "family": "simplewebpoc",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "poc",
+      "image": "614601912331.dkr.ecr.ap-south-1.amazonaws.com/poc/poc:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ]
+    }
+  ],
+  "executionRoleArn": "arn:aws:iam::<account-id>:role/ecsTaskExecutionRole"
+}
