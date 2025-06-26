@@ -36,7 +36,7 @@ function App() {
     <div style={{ padding: 20 }}>
       <h2>Real-Time Chat</h2>
       <input value={msg} onChange={(e) => setMsg(e.target.value)} />
-      <button onClick={sendMessage}>Send</button>
+      <button onClick={sendMessage}>Submit</button>
       <ul>
         {messages.map((m, i) => (
           <li key={i}>{m}</li>
